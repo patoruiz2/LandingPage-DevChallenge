@@ -5,14 +5,12 @@ body {
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
-  /* overflow-y: hidden; */
 }
 
 #main {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  /* /* justify-content: space-around; */
   align-items: center;
   height: 85%;
   box-sizing: border-box;
@@ -23,15 +21,9 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: larger;
   padding: 10px 0 0 10px;
-  /* /* margin: 5px 0 0 0;  */
+
 }
 
-/* .footer {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  margin-top: 5px;
-} */
 
 .footer {
   position: fixed;
@@ -46,10 +38,6 @@ body {
   margin: 0;
 }
 
-/* .footer {
-position: static;
-}  */
-
 .footer>p {
   font-family: 'Courier New', Courier, monospace;
   font-size: small;
@@ -60,10 +48,6 @@ p>span {
   font-weight: bold;
 }
 
-/* .img-container {
-  
-  flex-shrink: 1;
-/* }  */
 picture {
   width: 50%;
   margin: 0 auto;
@@ -79,7 +63,6 @@ picture {
 
 .feedback-information {
   width: 100%;
-  /* /* padding: 0 10px;  */
   margin: 0 auto;
   box-sizing: content-box;
 
@@ -100,18 +83,28 @@ picture {
 }
 
 .feedback-information>button {
-  background-color: rgba(56, 56, 241, 0.8);
+  background-color: rgba(40, 40, 247, 0.9);
   color: white;
   font-size: 1.120em;
   padding: 1.250em;
   border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  
+}
+
+.feedback-information>button:hover {
+  background-color: rgba(40, 40, 247, 0.7);
+  /* border: 3px double rgba(68, 68, 238, 0.8); */
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+
 }
 
 @media (min-width:320px) and (max-width:640px) {
 
   picture {
     width: 100%;
-    /* max-width: 500px; */
   }
 
   .img {
@@ -125,13 +118,11 @@ picture {
   }
 
   .feedback-information p {
-    /* max-width: 290px; */
     width: 90%;
     font-size: 1em;
   }
 
   .feedback-information h1 {
-    /* max-width: 300px; */
     width: 100%;
     font-size: 2em;
     font-weight: bolder;
@@ -243,23 +234,4 @@ picture {
     font-size: 0.9em;
   }
 
-  /* picture {
-    width: 50%;
-  } */
 }
-
-/* img {
-    /* @keyframes name | duration | easing-function | delay */
-/*************DELAY IS A MUST****************/
-/* @keyframes name | duration */
-/* animation: moveY infinite 400ms; */
-/* animation: 400ms linear 0s infinite alternate moveY; */
-/*@keyframes moveY {
-    from {
-      transform: translateY(0);
-    }
-
-    to {
-      transform: translateY(20px);
-    }
-  } */
