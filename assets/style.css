@@ -1,8 +1,10 @@
+html,
 body {
   margin: 0;
   padding: 0;
   width: 100vw;
   height: 100vh;
+  box-sizing: border-box;
   /* overflow-y: hidden; */
 }
 
@@ -10,7 +12,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
+  /* /* justify-content: space-around; */
   align-items: center;
   height: 85%;
   box-sizing: border-box;
@@ -21,18 +23,37 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: larger;
   padding: 10px 0 0 10px;
-  /* margin: 5px 0 0 0; */
+  /* /* margin: 5px 0 0 0;  */
 }
 
+/* .footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 5px;
+} */
+
 .footer {
-  height: 3em;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  padding: 5px;
 }
+
+.footer>p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+/* .footer {
+position: static;
+}  */
 
 .footer>p {
   font-family: 'Courier New', Courier, monospace;
   font-size: small;
   color: rgb(170, 166, 166);
-  text-align: center;
 }
 
 p>span {
@@ -42,12 +63,14 @@ p>span {
 /* .img-container {
   
   flex-shrink: 1;
-} */
-picture{
+/* }  */
+picture {
   width: 50%;
+  margin: 0 auto;
+  max-width: 700px;
 }
 
-picture>img {
+.img {
   display: block;
   margin: 0 auto;
   width: 80%;
@@ -55,22 +78,22 @@ picture>img {
 }
 
 .feedback-information {
-  width: fit-content;
-  /* padding: 0 10px; */
+  width: 100%;
+  /* /* padding: 0 10px;  */
   margin: 0 auto;
   box-sizing: content-box;
-  flex-shrink: 0;
+
 }
 
 .feedback-information h1 {
-  max-width: 300px;
+  max-width: 100%;
   font-size: 2.8em;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bolder;
 }
 
 .feedback-information p {
-  max-width: 300px;
+  max-width: 100%;
   font-size: 1em;
   font-family: 'Courier New', Courier, monospace;
   font-weight: 400;
@@ -84,7 +107,7 @@ picture>img {
   border: none;
 }
 
-@media (min-width:300px) {
+@media (min-width:320px) and (max-width:640px) {
   body {
     background-color: red;
     margin: 0;
@@ -93,17 +116,53 @@ picture>img {
 
   picture {
     width: 100%;
+    /* max-width: 500px; */
+  }
+
+  .img {
+    min-width: 320px;
+    max-width: 500px;
+  }
+
+  .feedback-information {
+    min-width: 300px;
+    max-width: 580px;
   }
 
   .feedback-information p {
-    width: 95%;
+    /* max-width: 290px; */
+    width: 90%;
     font-size: 1em;
-
   }
 
   .feedback-information h1 {
+    /* max-width: 300px; */
     width: 100%;
-    font-size: 2.5em;
+    font-size: 2em;
+    font-weight: bolder;
+  }
+
+  .footer>p {
+    font-size: 11px;
+  }
+
+  p>span {
+    font-size: 11px;
+  }
+}
+
+@media (min-width:640px) and (max-width:768px) {
+  body {
+    background: pink;
+  }
+
+  .feedback-information {
+
+    max-width: 500px;
+  }
+
+  picture {
+    max-width: 400px;
   }
 
   .footer>p {
@@ -115,60 +174,67 @@ picture>img {
   }
 }
 
-@media (min-width:640px) {
-  .feedback-information p {
-    min-width: 500px;
-    font-size: 1em;
-
-  }
-
-  .feedback-information h1 {
-    min-width: 500px;
-    font-size: 2.5em;
-  }
-
-  .footer>p {
-    font-size: large;
-  }
-
-  p>span {
-    font-size: large;
-  }
-}
-
-@media (min-width:768px) {
+@media (min-width:768px) and (max-width:1024px) {
   body {
     background-color: green;
   }
 
+  picture {
+    max-width: 400px;
+  }
+
+  .feedback-information {
+    max-width: 300px;
+  }
+
+  .feedback-information p {
+    font-size: 1.2em;
+    width: 100%;
+  }
+
+  .feedback-information h1 {
+    font-size: 2.8em;
+    width: 100%;
+  }
 }
 
-@media (min-width:1024px) {
+@media (min-width:1024px) and (max-width:1280px) {
   body {
     background-color: purple;
   }
 
-  picture {
-    width: 50%;
-  }
 
-  .feedback-information p {
-    min-width: 400px;
-    font-size: 2em;
-
+  .feedback-information {
+    max-width: 500px;
   }
 
   .feedback-information h1 {
-    min-width: 600px;
-    font-size: 4em;
+    max-width: 500px;
   }
 
-  .footer>p {
-    font-size: large;
+  .feedback-information p {
+    max-width: 450px;
+  }
+}
+
+@media (min-width:1280px) and (max-width:1440px) {
+  picture {
+    width: 50%;
+    max-width: 500px;
   }
 
-  p>span {
-    font-size: large;
+  .feedback-information {
+    max-width: 50%;
+  }
+
+  .feedback-information h1 {
+    max-width: 600px;
+    font-size: 5em;
+  }
+
+  .feedback-information p {
+    max-width: 450px;
+    font-size: 1.6em;
   }
 }
 
@@ -177,9 +243,25 @@ picture>img {
     background-color: orange;
   }
 
-  picture {
-    width: 50%;
+  .feedback-information {
+    max-width: 50%;
   }
+  .feedback-information h1 {
+    max-width: 600px;
+    font-size: 5.1em;
+  }
+
+  .feedback-information p {
+    max-width: 600px;
+    font-size: 1.9em;
+  }
+
+  .footer>p{
+    font-size: 0.9em;
+  }
+  /* picture {
+    width: 50%;
+  } */
 }
 
 /* img {
