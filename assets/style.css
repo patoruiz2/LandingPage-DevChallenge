@@ -115,6 +115,7 @@ picture {
   .feedback-information {
     min-width: 300px;
     max-width: 580px;
+    margin-left: 10px;
   }
 
   .feedback-information p {
